@@ -23,9 +23,9 @@ public class TestBase {
 		FileInputStream inputStream, inputStream1;
 		try {
 			inputStream = new FileInputStream(
-					"/Users/mohitrajupardeshi/eclipse-workspace/A/src/main/java/com/crm/config/config.properties");
+					"/Users/mohitrajupardeshi/eclipse-workspace/B/A/src/main/java/com/crm/config/config.properties");
 			inputStream1 = new FileInputStream(
-					"/Users/mohitrajupardeshi/eclipse-workspace/A/src/main/java/com/crm/config/pageTitle.properties");
+					"/Users/mohitrajupardeshi/eclipse-workspace/B/A/src/main/java/com/crm/config/pageTitle.properties");
 			prop.load(inputStream);
 			propertyPageTitles.load(inputStream1);
 		} catch (FileNotFoundException e) {
@@ -41,7 +41,7 @@ public class TestBase {
 			System.setProperty("webdriver.chrome.driver",
 					"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
 			ChromeOptions option = new ChromeOptions();
-			 option.addArguments("headless");
+			// option.addArguments("headless");
 	
 			driver = new ChromeDriver(option);
 			
