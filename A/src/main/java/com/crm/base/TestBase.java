@@ -15,9 +15,9 @@ import com.crm.utill.TestUtil;
 public class TestBase {
 	public static WebDriver driver;
 	public static Properties prop, propertyPageTitles;
-
-	public static void initialization() {
-
+	
+	public TestBase()
+	{
 		prop = new Properties();
 		propertyPageTitles = new Properties();
 		FileInputStream inputStream, inputStream1;
@@ -36,6 +36,12 @@ public class TestBase {
 			e.printStackTrace();
 		}
 
+		
+	}
+
+	public static void initialization() {
+
+		
 		String browserName = prop.getProperty("browser");
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",

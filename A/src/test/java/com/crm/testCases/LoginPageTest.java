@@ -7,6 +7,7 @@ import org.testng.asserts.Assertion;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import com.crm.base.TestBase;
@@ -17,24 +18,36 @@ public class LoginPageTest extends TestBase {
 
 	LoginPage loginPage;
 	TestUtil testUtil;
+	
+	public LoginPageTest() {
+	
+		super();
+		testUtil = new TestUtil();
+		
+	}
 
 	@BeforeMethod
 	public void setUp() {
 		initialization();
 		loginPage = new LoginPage();
-		testUtil = new TestUtil();
+		
 	}
 	/*
 	@Test(priority = 1)
 	public void loginPageTitleTest() {
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("LoginPage"));
+	}*/
+	@DataProvider(name = "getData")
+	public Object[][] getData()
+	{
+		Object [][] data=testUtil.getData(null, null);
+		return data;	
 	}
-
 	@Test(priority = 2)
 	public void loginIncorrectDetailsTest() {
 		loginPage.login(prop.getProperty("userName1"), prop.getProperty("password"));
 	}
-
+	/*
 	@Test(priority = 3)
 	public void successfulLoginTest() {
 		loginPage.login(prop.getProperty("userName"), prop.getProperty("password"));

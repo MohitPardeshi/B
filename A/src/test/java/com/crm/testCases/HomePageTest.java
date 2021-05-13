@@ -18,6 +18,10 @@ public class HomePageTest extends TestBase {
 	HomePage homePage;
 	TestUtil testUtil;
 
+	public HomePageTest() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
 	@BeforeMethod
 	public void setUp() {
 
