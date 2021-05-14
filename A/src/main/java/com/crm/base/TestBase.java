@@ -9,11 +9,14 @@ import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.crm.utill.TestUtil;
+import com.crm.webDriverListener.WebDriverListener;
 
 public class TestBase {
 	public static WebDriver driver;
+	public static EventFiringWebDriver e_driver;
 	public static Properties prop, propertyPageTitles;
 	
 	public TestBase()
@@ -48,9 +51,12 @@ public class TestBase {
 					"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
 			ChromeOptions option = new ChromeOptions();
 			// option.addArguments("headless");
-	
-			driver = new ChromeDriver(option);
 			
+			driver = new ChromeDriver(option);
+			e_driver=new EventFiringWebDriver(driver);
+			WebDriverListener wbd= new WebDriverListener();
+			e_driver.register(wbd);
+			driver=e_driver;
 		}
 
 		driver.manage().window().maximize();

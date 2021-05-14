@@ -6,18 +6,11 @@
   </listeners>
   <test thread-count="5" name="Start(failed)">
     <classes>
-      <class name="com.crm.testCases.HomePageTest">
-        <methods>
-          <include name="mouseOverCalendar"/>
-          <include name="tearDown"/>
-          <include name="setUp"/>
-        </methods>
-      </class> <!-- com.crm.testCases.HomePageTest -->
       <class name="com.crm.testCases.LoginPageTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="contactButton"/>
+          <include name="loginIncorrectDetailsTest" invocation-numbers="0 2 3 4"/>
         </methods>
       </class> <!-- com.crm.testCases.LoginPageTest -->
     </classes>

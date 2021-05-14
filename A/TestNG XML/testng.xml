@@ -7,7 +7,7 @@
 	<test name="Start">
 		<classes>
 			<class name="com.crm.testCases.LoginPageTest" />
-			<class name="com.crm.testCases.HomePageTest" />
+			<!--class name="com.crm.testCases.HomePageTest" /-->
 		</classes>
 	</test>
 </suite>

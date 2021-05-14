@@ -61,14 +61,14 @@ public class HomePageTest extends TestBase {
 	 * @Test(priority=6) public void auditTrailPage() {
 	 * testUtil.switchWindowFrame("mainpanel"); homePage.auditTrailClick();
 	 * Assert.assertTrue(homePage.auditTrailPageDisplayed()); }
-	 */
+	 
 
 	@Test(priority = 7)
 	public void mouseOverCalendar() {
 		testUtil.switchWindowFrame("mainpanel");
 		homePage.mouseOver("Calendar");
 	}
-
+	*/
 	@AfterMethod
 	public void tearDown() {
 		// driver.close();

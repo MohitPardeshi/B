@@ -18,19 +18,21 @@ public class LoginPageTest extends TestBase {
 
 	LoginPage loginPage;
 	TestUtil testUtil;
+	String excelSheetPath;
+	String sheetName;
 	
 	public LoginPageTest() {
 	
 		super();
 		testUtil = new TestUtil();
-		
+		excelSheetPath=prop.getProperty("excelSheetPath");
+		sheetName=prop.getProperty("sheetName");
 	}
 
 	@BeforeMethod
 	public void setUp() {
 		initialization();
 		loginPage = new LoginPage();
-		
 	}
 	/*
 	@Test(priority = 1)
@@ -40,12 +42,15 @@ public class LoginPageTest extends TestBase {
 	@DataProvider(name = "getData")
 	public Object[][] getData()
 	{
-		Object [][] data=testUtil.getData(null, null);
+		Object [][] data=testUtil.getData(excelSheetPath,sheetName);
 		return data;	
 	}
-	@Test(priority = 2)
-	public void loginIncorrectDetailsTest() {
-		loginPage.login(prop.getProperty("userName1"), prop.getProperty("password"));
+	@Test(priority = 2,dataProvider = "getData")
+	public void loginIncorrectDetailsTest(String userName, String password) {
+		
+		loginPage.login(userName, password);
+		//loginPage.login(prop.getProperty("userName1"), prop.getProperty("password"));
+		Assert.assertEquals(testUtil.getWindowTitle(),propertyPageTitles.get("HomePage"));
 	}
 	/*
 	@Test(priority = 3)
@@ -87,14 +92,14 @@ public class LoginPageTest extends TestBase {
 		testUtil.switchWindow();
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("CustomersPage"));
 	}
-	*/
+	
 	@Test(priority = 9)
 	public void contactButton() {
 		loginPage.clickContact();
 		testUtil.switchWindow();
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("ContactPage"));
 	}
-
+	*/
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();

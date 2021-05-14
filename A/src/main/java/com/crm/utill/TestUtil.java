@@ -41,7 +41,6 @@ public class TestUtil extends TestBase
 	{
 		FileInputStream file= null;
 		Object[][] data = null;
-		excelSheetPath="mohit.xls";
 		try {
 			file = new FileInputStream(excelSheetPath);
 		} catch (FileNotFoundException e) {
