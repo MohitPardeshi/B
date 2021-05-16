@@ -54,7 +54,7 @@ public class LoginPageTest extends TestBase {
 		// loginPage.login(prop.getProperty("userName1"), prop.getProperty("password"));
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.get("HomePage"));
 	}
-
+	/*
 	@Test(priority = 3)
 	public void successfulLoginTest() {
 		loginPage.login(prop.getProperty("userName"), prop.getProperty("password"));
@@ -100,7 +100,7 @@ public class LoginPageTest extends TestBase {
 		loginPage.clickContact();
 		testUtil.switchWindow();
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("ContactPage"));
-	}
+	} */
 
 	@AfterMethod
 	public void tearDown() {
