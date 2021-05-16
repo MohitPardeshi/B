@@ -23,9 +23,8 @@ public class TestBase {
 	public static WebDriver driver;
 	public static EventFiringWebDriver e_driver;
 	public static Properties prop, propertyPageTitles;
-	
-	public TestBase()
-	{
+
+	public TestBase() {
 		prop = new Properties();
 		propertyPageTitles = new Properties();
 		FileInputStream inputStream, inputStream1;
@@ -44,13 +43,11 @@ public class TestBase {
 			e.printStackTrace();
 		}
 
-		
 	}
 
 	public static void initialization() {
 
-		
-		DesiredCapabilities dc =new DesiredCapabilities();
+		DesiredCapabilities dc = new DesiredCapabilities();
 		dc.setBrowserName("chrome");
 		dc.setPlatform(Platform.WINDOWS);
 		String browserName = prop.getProperty("browser");
@@ -58,18 +55,17 @@ public class TestBase {
 			System.setProperty("webdriver.chrome.driver",
 					"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
 			ChromeOptions option = new ChromeOptions();
-			// option.addArguments("headless");
-			/*try {
-			//= new RemoteWebDriver(new URL("http://192.168.0.102:4444/wd/hub"),dc);
-			} catch (MalformedURLException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}*/
+			option.addArguments("headless");
+			/*
+			 * try { //= new RemoteWebDriver(new
+			 * URL("http://192.168.0.102:4444/wd/hub"),dc); } catch (MalformedURLException
+			 * e) { // TODO Auto-generated catch block e.printStackTrace(); }
+			 */
 			driver = new ChromeDriver(option);
-			e_driver=new EventFiringWebDriver(driver);
-			WebDriverListener wbd= new WebDriverListener();
+			e_driver = new EventFiringWebDriver(driver);
+			WebDriverListener wbd = new WebDriverListener();
 			e_driver.register(wbd);
-			driver=e_driver;
+			driver = e_driver;
 		}
 
 		driver.manage().window().maximize();

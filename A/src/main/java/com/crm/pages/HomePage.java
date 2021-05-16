@@ -13,7 +13,7 @@ import com.crm.pages.*;
 public class HomePage extends TestBase {
 
 	Actions a = new Actions(driver);
-	
+
 	// Label
 	@FindBy(xpath = "//td[contains(text(),'User: group automation')]")
 	WebElement userNameLabel;
@@ -80,10 +80,9 @@ public class HomePage extends TestBase {
 
 	@FindBy(xpath = "//a[contains(text(),'Reports')]")
 	WebElement reports;
-	
+
 	// Mouse over menu of Calender
-	
-	
+
 	// MenuPageOpen
 
 	public void calendarPageOpen() {
@@ -99,7 +98,7 @@ public class HomePage extends TestBase {
 		case "Companies":
 			a.moveToElement(companies).build().perform();
 			break;
-		case "" :
+		case "":
 			break;
 		}
 	}
