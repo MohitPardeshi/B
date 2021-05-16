@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.crm.base.TestBase;
+import com.crm.pages.*;
 
 public class HomePage extends TestBase {
 

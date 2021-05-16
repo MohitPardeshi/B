@@ -56,7 +56,7 @@ public class TestUtil extends TestBase
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("xlsx");
+			//System.out.println("xlsx");
 		}else
 		{
 			try {
@@ -65,7 +65,7 @@ public class TestUtil extends TestBase
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			System.out.println("xls");
+			//System.out.println("xls");
 		}
 		
 		sheet=wb.getSheet(sheetName);
@@ -76,7 +76,7 @@ public class TestUtil extends TestBase
 			for(int j=0; j<sheet.getRow(0).getLastCellNum();j++)
 			{
 				data[i][j]=sheet.getRow(i+1).getCell(j).toString();
-				System.out.println(data[i][j]);
+				//System.out.println(data[i][j]);
 			}
 		}		
 		return data;

@@ -8,6 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Factory;
 import org.testng.annotations.Test;
 
 import com.crm.base.TestBase;
@@ -45,6 +46,7 @@ public class LoginPageTest extends TestBase {
 		Object [][] data=testUtil.getData(excelSheetPath,sheetName);
 		return data;	
 	}
+	
 	@Test(priority = 2,dataProvider = "getData")
 	public void loginIncorrectDetailsTest(String userName, String password) {
 		

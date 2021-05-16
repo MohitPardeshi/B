@@ -3,12 +3,17 @@ package com.crm.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
 
 import com.crm.utill.TestUtil;
@@ -45,13 +50,21 @@ public class TestBase {
 	public static void initialization() {
 
 		
+		DesiredCapabilities dc =new DesiredCapabilities();
+		dc.setBrowserName("chrome");
+		dc.setPlatform(Platform.WINDOWS);
 		String browserName = prop.getProperty("browser");
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
 					"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
 			ChromeOptions option = new ChromeOptions();
 			// option.addArguments("headless");
-			
+			/*try {
+			//= new RemoteWebDriver(new URL("http://192.168.0.102:4444/wd/hub"),dc);
+			} catch (MalformedURLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}*/
 			driver = new ChromeDriver(option);
 			e_driver=new EventFiringWebDriver(driver);
 			WebDriverListener wbd= new WebDriverListener();
