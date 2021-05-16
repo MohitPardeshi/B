@@ -55,7 +55,7 @@ public class TestBase {
 			System.setProperty("webdriver.chrome.driver",
 					"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
 			ChromeOptions option = new ChromeOptions();
-			option.addArguments("headless");
+			//option.addArguments("headless");
 			/*
 			 * try { //= new RemoteWebDriver(new
 			 * URL("http://192.168.0.102:4444/wd/hub"),dc); } catch (MalformedURLException
