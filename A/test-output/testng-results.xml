@@ -2,16 +2,16 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-31T08:22:36 IST" name="Default suite" finished-at="2021-05-31T08:22:41 IST" duration-ms="5516">
+  <suite started-at="2021-05-31T14:23:09 IST" name="Default suite" finished-at="2021-05-31T14:23:13 IST" duration-ms="4511">
     <groups>
     </groups>
-    <test started-at="2021-05-31T08:22:36 IST" name="Default test" finished-at="2021-05-31T08:22:41 IST" duration-ms="5516">
+    <test started-at="2021-05-31T14:23:09 IST" name="Default test" finished-at="2021-05-31T14:23:13 IST" duration-ms="4511">
       <class name="com.crm.testCases.LoginPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.testCases.LoginPageTest@1a18644]" started-at="2021-05-31T08:22:36 IST" name="setUp" finished-at="2021-05-31T08:22:41 IST" duration-ms="5439" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.testCases.LoginPageTest@6cd28fa7]" started-at="2021-05-31T14:23:09 IST" name="setUp" finished-at="2021-05-31T14:23:13 IST" duration-ms="4025" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginPageTitleTest()[pri:1, instance:com.crm.testCases.LoginPageTest@1a18644]" started-at="2021-05-31T08:22:41 IST" name="loginPageTitleTest" finished-at="2021-05-31T08:22:41 IST" duration-ms="41" status="FAIL">
+        <test-method signature="loginPageTitleTest()[pri:1, instance:com.crm.testCases.LoginPageTest@6cd28fa7]" started-at="2021-05-31T14:23:13 IST" name="loginPageTitleTest" finished-at="2021-05-31T14:23:13 IST" duration-ms="34" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [CRMPRO - CRM software for customer relationship management, sales, and support.] but found [Privacy error]]]>
@@ -24,7 +24,7 @@ at org.testng.Assert.assertEqualsImpl(Assert.java:140)
 at org.testng.Assert.assertEquals(Assert.java:122)
 at org.testng.Assert.assertEquals(Assert.java:629)
 at org.testng.Assert.assertEquals(Assert.java:639)
-at com.crm.testCases.LoginPageTest.loginPageTitleTest(LoginPageTest.java:41)
+at com.crm.testCases.LoginPageTest.loginPageTitleTest(LoginPageTest.java:45)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -59,7 +59,7 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginPageTitleTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.testCases.LoginPageTest@1a18644]" started-at="2021-05-31T08:22:41 IST" name="tearDown" finished-at="2021-05-31T08:22:41 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.testCases.LoginPageTest@6cd28fa7]" started-at="2021-05-31T14:23:13 IST" name="tearDown" finished-at="2021-05-31T14:23:13 IST" duration-ms="82" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->

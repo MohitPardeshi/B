@@ -9,11 +9,14 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Factory;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.crm.base.TestBase;
 import com.crm.pages.LoginPage;
 import com.crm.utill.TestUtil;
+
+@Listeners(com.crm.TestNGListener.TestNGListener.class)
 
 public class LoginPageTest extends TestBase {
 
@@ -22,6 +25,7 @@ public class LoginPageTest extends TestBase {
 	String excelSheetPath;
 	String sheetName;
 
+	
 	public LoginPageTest() {
 
 		super();
@@ -104,6 +108,6 @@ public class LoginPageTest extends TestBase {
 
 	@AfterMethod
 	public void tearDown() {
-		//driver.quit();
+		driver.quit();
 	}
 }

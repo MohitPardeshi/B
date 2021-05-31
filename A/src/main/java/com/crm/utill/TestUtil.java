@@ -88,7 +88,8 @@ public class TestUtil extends TestBase
 	
 	public static void takeScreenshotAtEndOfTest() throws IOException {
 		File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String currentDir = System.getProperty("UserDirectory");
+		String currentDir = prop.getProperty("UserDirectory");
 		FileUtils.copyFile(scrFile, new File(currentDir + "/screenshots/" + System.currentTimeMillis() + ".png"));
+		System.out.println("Screenshot");
 	}
 }
