@@ -9,7 +9,23 @@
 
 	<name>A</name>
 	<url>http://maven.apache.org</url>
-
+		 <build>
+		 <pluginManagement>
+         <plugins>
+            <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-surefire-plugin</artifactId>
+               <version>2.12.4</version>
+               <configuration>
+                  <suiteXmlFiles>
+                     <suiteXmlFile>/Users/mohitrajupardeshi/eclipse-workspace/B/A/TestNG XML/testng.xml</suiteXmlFile>
+                  </suiteXmlFiles>
+               </configuration>
+            </plugin>     
+         </plugins>
+         </pluginManagement>
+      </build>
+	
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.source>1.8</maven.compiler.source>

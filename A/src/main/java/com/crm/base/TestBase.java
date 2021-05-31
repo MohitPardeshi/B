@@ -46,15 +46,18 @@ public class TestBase {
 	}
 
 	public static void initialization() {
-
-		DesiredCapabilities dc = new DesiredCapabilities();
-		dc.setBrowserName("chrome");
-		dc.setPlatform(Platform.WINDOWS);
+		
 		String browserName = prop.getProperty("browser");
+	//	DesiredCapabilities dc = new DesiredCapabilities();
+		DesiredCapabilities dc=DesiredCapabilities.chrome();
+	//	dc.setBrowserName(browserName);
+	//	dc.setPlatform(Platform.WINDOWS);
+		dc.acceptInsecureCerts();
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",
 					"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
 			ChromeOptions option = new ChromeOptions();
+			option.merge(dc);
 			//option.addArguments("headless");
 			/*
 			 * try { //= new RemoteWebDriver(new

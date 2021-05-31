@@ -1,5 +1,7 @@
 package com.crm.webDriverListener;
 
+import java.io.IOException;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
@@ -7,6 +9,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
 import com.crm.base.TestBase;
+import com.crm.utill.TestUtil;
 
 public class WebDriverListener extends TestBase implements WebDriverEventListener{
 
@@ -53,6 +56,13 @@ public class WebDriverListener extends TestBase implements WebDriverEventListene
 
 	public void onException(Throwable error, WebDriver driver) {
 		System.out.println("Exception occured: " + error);
+		try {
+			TestUtil.takeScreenshotAtEndOfTest();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	public void beforeFindBy(By by, WebElement element, WebDriver driver) {
