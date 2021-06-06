@@ -19,10 +19,13 @@ import org.openqa.selenium.support.events.EventFiringWebDriver;
 import com.crm.utill.TestUtil;
 import com.crm.webDriverListener.WebDriverListener;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class TestBase {
 	public static WebDriver driver;
 	public static EventFiringWebDriver e_driver;
 	public static Properties prop, propertyPageTitles;
+	
 
 	public TestBase() {
 		prop = new Properties();
@@ -54,8 +57,11 @@ public class TestBase {
 	//	dc.setPlatform(Platform.WINDOWS);
 		dc.acceptInsecureCerts();
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver",
-					"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
+			//System.setProperty("webdriver.chrome.driver",
+			//		"/Users/mohitrajupardeshi/Desktop/Mohit/Selenium/chromedriver");
+			
+			WebDriverManager.chromedriver().setup();
+			
 			ChromeOptions option = new ChromeOptions();
 			option.merge(dc);
 			//option.addArguments("headless");

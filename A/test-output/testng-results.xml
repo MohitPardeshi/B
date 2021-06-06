@@ -1,30 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
+<testng-results ignored="7" total="9" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2021-05-31T14:23:09 IST" name="Default suite" finished-at="2021-05-31T14:23:13 IST" duration-ms="4511">
+  <suite started-at="2021-06-06T18:22:54 IST" name="Automation Testing" finished-at="2021-06-06T18:27:01 IST" duration-ms="247572">
     <groups>
     </groups>
-    <test started-at="2021-05-31T14:23:09 IST" name="Default test" finished-at="2021-05-31T14:23:13 IST" duration-ms="4511">
+    <test started-at="2021-06-06T18:22:54 IST" name="Login" finished-at="2021-06-06T18:23:30 IST" duration-ms="36340">
       <class name="com.crm.testCases.LoginPageTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.testCases.LoginPageTest@6cd28fa7]" started-at="2021-05-31T14:23:09 IST" name="setUp" finished-at="2021-05-31T14:23:13 IST" duration-ms="4025" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.testCases.LoginPageTest@e15b7e8]" started-at="2021-06-06T18:22:54 IST" name="setUp" finished-at="2021-06-06T18:23:07 IST" duration-ms="13228" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="loginPageTitleTest()[pri:1, instance:com.crm.testCases.LoginPageTest@6cd28fa7]" started-at="2021-05-31T14:23:13 IST" name="loginPageTitleTest" finished-at="2021-05-31T14:23:13 IST" duration-ms="34" status="FAIL">
+        <test-method signature="brokenLinksLoginPage()[pri:10, instance:com.crm.testCases.LoginPageTest@e15b7e8]" started-at="2021-06-06T18:23:07 IST" name="brokenLinksLoginPage" finished-at="2021-06-06T18:23:29 IST" duration-ms="21642" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
-              <![CDATA[expected [CRMPRO - CRM software for customer relationship management, sales, and support.] but found [Privacy error]]]>
+              <![CDATA[The following asserts failed:
+The link https://freecrm.com/features.html is Broken. Response Code is 404 expected [true] but found [false],
+The link https://freecrm.com/features.html is Broken. Response Code is 404 expected [true] but found [false],
+The link https://freecrm.com/customers.html is Broken. Response Code is 404 expected [true] but found [false],
+The link https://freecrm.com/customers.html is Broken. Response Code is 404 expected [true] but found [false]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: expected [CRMPRO - CRM software for customer relationship management, sales, and support.] but found [Privacy error]
-at org.testng.Assert.fail(Assert.java:99)
-at org.testng.Assert.failNotEquals(Assert.java:1037)
-at org.testng.Assert.assertEqualsImpl(Assert.java:140)
-at org.testng.Assert.assertEquals(Assert.java:122)
-at org.testng.Assert.assertEquals(Assert.java:629)
-at org.testng.Assert.assertEquals(Assert.java:639)
-at com.crm.testCases.LoginPageTest.loginPageTitleTest(LoginPageTest.java:45)
+              <![CDATA[java.lang.AssertionError: The following asserts failed:
+The link https://freecrm.com/features.html is Broken. Response Code is 404 expected [true] but found [false],
+The link https://freecrm.com/features.html is Broken. Response Code is 404 expected [true] but found [false],
+The link https://freecrm.com/customers.html is Broken. Response Code is 404 expected [true] but found [false],
+The link https://freecrm.com/customers.html is Broken. Response Code is 404 expected [true] but found [false]
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:47)
+at org.testng.asserts.SoftAssert.assertAll(SoftAssert.java:31)
+at com.crm.utill.TestUtil.brokenLinks(TestUtil.java:119)
+at com.crm.testCases.LoginPageTest.brokenLinksLoginPage(LoginPageTest.java:111)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -58,12 +63,28 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
           </exception> <!-- java.lang.AssertionError -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginPageTitleTest -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.testCases.LoginPageTest@6cd28fa7]" started-at="2021-05-31T14:23:13 IST" name="tearDown" finished-at="2021-05-31T14:23:13 IST" duration-ms="82" status="PASS">
+        </test-method> <!-- brokenLinksLoginPage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.testCases.LoginPageTest@e15b7e8]" started-at="2021-06-06T18:23:30 IST" name="tearDown" finished-at="2021-06-06T18:23:30 IST" duration-ms="98" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- com.crm.testCases.LoginPageTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Login -->
+    <test started-at="2021-06-06T18:23:30 IST" name="HomePage" finished-at="2021-06-06T18:27:01 IST" duration-ms="211146">
+      <class name="com.crm.testCases.HomePageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.testCases.HomePageTest@5ab956d7]" started-at="2021-06-06T18:23:30 IST" name="setUp" finished-at="2021-06-06T18:23:50 IST" duration-ms="19720" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="brokenLinksHomePage()[pri:8, instance:com.crm.testCases.HomePageTest@5ab956d7]" started-at="2021-06-06T18:23:50 IST" name="brokenLinksHomePage" finished-at="2021-06-06T18:27:01 IST" duration-ms="191399" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- brokenLinksHomePage -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.crm.testCases.HomePageTest@5ab956d7]" started-at="2021-06-06T18:27:01 IST" name="tearDown" finished-at="2021-06-06T18:27:01 IST" duration-ms="4" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.crm.testCases.HomePageTest -->
+    </test> <!-- HomePage -->
+  </suite> <!-- Automation Testing -->
 </testng-results>

@@ -79,6 +79,13 @@ public class HomePageTest extends TestBase {
 		testUtil.switchWindowFrame("mainpanel");
 		homePage.mouseOver("Calendar");
 	}
+	
+	@Test(priority=8)
+	public void brokenLinksHomePage()
+	{
+		testUtil.switchWindowFrame("mainpanel");
+		testUtil.brokenLinks();
+	}
 
 	@AfterMethod
 	public void tearDown() {

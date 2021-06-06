@@ -7,15 +7,19 @@
 	<test name="Login">
 		<classes>
 			<class name="com.crm.testCases.LoginPageTest">
-			<methods>
-			<include name="login.*"/>
-			</methods>
+				<methods>
+					<include name="broken.*" />
+				</methods>
 			</class>
 		</classes>
 	</test>
 	<test name="HomePage">
-	<classes>
-	<class name="com.crm.testCases.HomePageTest" />
-	</classes>
+		<classes>
+			<class name="com.crm.testCases.HomePageTest">
+			<methods>
+				<include name="broken.*" />
+			</methods>
+			</class>
+		</classes>
 	</test>
 </suite>

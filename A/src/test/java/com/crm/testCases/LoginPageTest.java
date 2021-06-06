@@ -25,7 +25,6 @@ public class LoginPageTest extends TestBase {
 	String excelSheetPath;
 	String sheetName;
 
-	
 	public LoginPageTest() {
 
 		super();
@@ -39,18 +38,18 @@ public class LoginPageTest extends TestBase {
 		initialization();
 		loginPage = new LoginPage();
 	}
-
+	/*
 	@Test(priority = 1)
 	public void loginPageTitleTest() {
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("LoginPage"));
 	}
-	/*
+
 	@DataProvider(name = "getData")
 	public Object[][] getData() {
 		Object[][] data = testUtil.getData(excelSheetPath, sheetName);
 		return data;
 	}
-	
+
 	@Test(priority = 2, dataProvider = "getData")
 	public void loginIncorrectDetailsTest(String userName, String password) {
 
@@ -58,7 +57,7 @@ public class LoginPageTest extends TestBase {
 		// loginPage.login(prop.getProperty("userName1"), prop.getProperty("password"));
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.get("HomePage"));
 	}
-	
+
 	@Test(priority = 3)
 	public void successfulLoginTest() {
 		loginPage.login(prop.getProperty("userName"), prop.getProperty("password"));
@@ -104,8 +103,13 @@ public class LoginPageTest extends TestBase {
 		loginPage.clickContact();
 		testUtil.switchWindow();
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("ContactPage"));
-	} */
-
+	}*/
+	
+	@Test(priority= 10 )
+	public void brokenLinksLoginPage()
+	{
+		testUtil.brokenLinks();
+	}
 	@AfterMethod
 	public void tearDown() {
 		driver.quit();

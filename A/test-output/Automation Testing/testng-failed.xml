@@ -4,15 +4,15 @@
   <listeners>
     <listener class-name="com.crm.ExtentReportListener.ExtentReporterNG"/>
   </listeners>
-  <test thread-count="5" name="Start(failed)">
+  <test thread-count="5" name="Login(failed)">
     <classes>
       <class name="com.crm.testCases.LoginPageTest">
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="loginIncorrectDetailsTest" invocation-numbers="0 2 3 4"/>
+          <include name="brokenLinksLoginPage"/>
         </methods>
       </class> <!-- com.crm.testCases.LoginPageTest -->
     </classes>
-  </test> <!-- Start(failed) -->
+  </test> <!-- Login(failed) -->
 </suite> <!-- Failed suite [Automation Testing] -->
