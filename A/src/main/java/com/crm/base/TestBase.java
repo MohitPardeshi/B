@@ -28,6 +28,9 @@ public class TestBase {
 	
 
 	public TestBase() {
+		
+		//Read Properties files
+		
 		prop = new Properties();
 		propertyPageTitles = new Properties();
 		FileInputStream inputStream, inputStream1;
