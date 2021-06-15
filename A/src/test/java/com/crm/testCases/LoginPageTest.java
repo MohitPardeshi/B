@@ -1,5 +1,6 @@
 package com.crm.testCases;
 
+import org.apache.log4j.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.Test;
@@ -20,14 +21,17 @@ import com.crm.utill.TestUtil;
 
 public class LoginPageTest extends TestBase {
 
+public static Logger log=LogManager.getLogger(LoginPageTest.class.getName());	
 	LoginPage loginPage;
 	TestUtil testUtil;
 	String excelSheetPath;
 	String sheetName;
 
 	public LoginPageTest() {
-
+		
+		
 		super();
+		log.info("### "+this.getClass().getName()+"Constructor ###");
 		testUtil = new TestUtil();
 		excelSheetPath = prop.getProperty("excelSheetPath");
 		sheetName = prop.getProperty("sheetName");
@@ -35,6 +39,7 @@ public class LoginPageTest extends TestBase {
 
 	@BeforeMethod
 	public void setUp() {
+		log.info("### BEFORE METHOD ###");
 		initialization();
 		loginPage = new LoginPage();
 	}
