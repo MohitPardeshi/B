@@ -1,5 +1,7 @@
 package com.crm.testCases;
 
+import java.lang.reflect.Method;
+
 import org.apache.log4j.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -31,20 +33,20 @@ public static Logger log=LogManager.getLogger(LoginPageTest.class.getName());
 		
 		
 		super();
-		log.info("### "+this.getClass().getName()+"Constructor ###");
+		log.info("### "+this.getClass().getName()+" CONSTRUCTOR ###");
 		testUtil = new TestUtil();
 		excelSheetPath = prop.getProperty("excelSheetPath");
 		sheetName = prop.getProperty("sheetName");
 	}
 
 	@BeforeMethod
-	public void setUp() {
-		log.info("### BEFORE METHOD ###");
+	public void setUp(Method method) {
+		log.info("### BEFORE METHOD OF "+method.getName()+" ###");
 		initialization();
 		loginPage = new LoginPage();
 	}
-	/*
-	@Test(priority = 1)
+	
+	@Test(priority = 1, enabled=true)
 	public void loginPageTitleTest() {
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("LoginPage"));
 	}
@@ -55,7 +57,7 @@ public static Logger log=LogManager.getLogger(LoginPageTest.class.getName());
 		return data;
 	}
 
-	@Test(priority = 2, dataProvider = "getData")
+	@Test(priority = 2, dataProvider = "getData", enabled=false)
 	public void loginIncorrectDetailsTest(String userName, String password) {
 
 		loginPage.login(userName, password);
@@ -63,18 +65,18 @@ public static Logger log=LogManager.getLogger(LoginPageTest.class.getName());
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.get("HomePage"));
 	}
 
-	@Test(priority = 3)
+	@Test(priority = 3, enabled=true)
 	public void successfulLoginTest() {
 		loginPage.login(prop.getProperty("userName"), prop.getProperty("password"));
 	}
 
-	@Test(priority = 4)
+	@Test(priority = 4, enabled=false)
 	public void homeButton() {
 		loginPage.clickHome();
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("HomePage"));
 	}
 
-	@Test(priority = 5)
+	@Test(priority = 5, enabled=false)
 	public void signUpButton() {
 		loginPage.clickSignUp();
 		testUtil.switchWindow();
@@ -82,41 +84,42 @@ public static Logger log=LogManager.getLogger(LoginPageTest.class.getName());
 
 	}
 
-	@Test(priority = 6)
+	@Test(priority = 6, enabled=false)
 	public void pricingButton() {
 		loginPage.clickPricing();
 		testUtil.switchWindow();
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("PricingPage"));
 	}
 
-	@Test(priority = 7)
+	@Test(priority = 7, enabled=false)
 	public void featuresButton() {
 		loginPage.clickFeatures();
 		testUtil.switchWindow();
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("FeaturesPage"));
 	}
 
-	@Test(priority = 8)
+	@Test(priority = 8, enabled=false)
 	public void customersButton() {
 		loginPage.clickCustomers();
 		testUtil.switchWindow();
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("CustomersPage"));
 	}
 
-	@Test(priority = 9)
+	@Test(priority = 9, enabled=false)
 	public void contactButton() {
 		loginPage.clickContact();
 		testUtil.switchWindow();
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.getProperty("ContactPage"));
-	}*/
+	}
 	
-	@Test(priority= 10 )
+	@Test(priority= 10, enabled=false )
 	public void brokenLinksLoginPage()
 	{
 		testUtil.brokenLinks();
 	}
 	@AfterMethod
-	public void tearDown() {
+	public void tearDown(Method method) {
+		log.info("### AFTER METHOD OF "+method.getName()+" ###");
 		driver.quit();
 	}
 }

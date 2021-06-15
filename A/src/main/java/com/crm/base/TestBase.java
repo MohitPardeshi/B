@@ -8,6 +8,8 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.BasicConfigurator;
+import org.apache.log4j.*;
 import org.openqa.selenium.Platform;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -25,12 +27,13 @@ public class TestBase {
 	public static WebDriver driver;
 	public static EventFiringWebDriver e_driver;
 	public static Properties prop, propertyPageTitles;
-	
+	public static Logger log=LogManager.getLogger(TestBase.class.getName());
 
 	public TestBase() {
 		
+		log.info("### "+this.getClass().getName()+" CONSTRUCTOR ###");
 		//Read Properties files
-		
+		BasicConfigurator.configure();
 		prop = new Properties();
 		propertyPageTitles = new Properties();
 		FileInputStream inputStream, inputStream1;
