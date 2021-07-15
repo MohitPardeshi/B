@@ -87,6 +87,11 @@ public class TestBase {
 		driver.manage().deleteAllCookies();
 		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
 		driver.get(prop.getProperty("url"));
+		
+		//driver.executeAsyncScript();
+		//RemoteWebDriver d= new RemoteWebDriver(dc);
+		//d.executeAsyncScript(browserName, null);
+		
 	}
 
 }

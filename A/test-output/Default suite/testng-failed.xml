@@ -7,7 +7,7 @@
         <methods>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="brokenLinksLoginPage"/>
+          <include name="successfulLoginTest"/>
         </methods>
       </class> <!-- com.crm.testCases.LoginPageTest -->
     </classes>
