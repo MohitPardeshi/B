@@ -65,7 +65,7 @@ public static Logger log=LogManager.getLogger(LoginPageTest.class.getName());
 		Assert.assertEquals(testUtil.getWindowTitle(), propertyPageTitles.get("HomePage"));
 	}
 
-	@Test(priority = 3, enabled=true)
+	@Test(priority = -1, enabled=true)
 	public void successfulLoginTest() {
 		loginPage.login(prop.getProperty("userName"), prop.getProperty("password"));
 	}

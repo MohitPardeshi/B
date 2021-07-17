@@ -98,13 +98,17 @@ public class HomePage extends TestBase {
 		case "Companies":
 			a.moveToElement(companies).build().perform();
 			break;
-		case "":
+		case "Deals":
+			a.moveToElement(deals).build().perform();
 			break;
 		}
 	}
 
 	@FindBy(xpath = "//a[contains(text(),'Audit Trail')]")
 	WebElement auditTrail;
+	
+	@FindBy(xpath = "//a[contains(text(),'New Deal')]")
+	WebElement newDeal;
 
 	@FindBy(xpath = "//td[contains(text(),'')]")
 	WebElement auditTrailOpen;
@@ -146,7 +150,14 @@ public class HomePage extends TestBase {
 		return new AuditTrailPage();
 	}
 
+	public NewDealPage newDealClick() {
+		newDeal.click();
+		return new NewDealPage();
+	}
+	
 	public boolean auditTrailPageDisplayed() {
 		return auditTrailOpen.isDisplayed();
 	}
+	
+	
 }

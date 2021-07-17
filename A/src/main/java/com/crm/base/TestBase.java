@@ -24,7 +24,7 @@ import com.crm.webDriverListener.WebDriverListener;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
-	public static WebDriver driver;
+	protected static WebDriver driver;
 	public static EventFiringWebDriver e_driver;
 	public static Properties prop, propertyPageTitles;
 	public static Logger log=LogManager.getLogger(TestBase.class.getName());
